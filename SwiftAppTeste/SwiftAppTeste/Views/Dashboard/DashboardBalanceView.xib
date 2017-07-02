@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibView" customModule="SwiftAppTeste" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4u-St-EtN">
+                    <rect key="frame" x="0.0" y="48" width="375" height="54"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seu saldo atual é de:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzh-pl-dr8">
+                            <rect key="frame" x="18" y="0.0" width="297" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="i8Y-dz-yrB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.14117647058823529" green="0.24313725490196078" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$2.152,23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ol9-gf-B02">
+                            <rect key="frame" x="18" y="18" width="297" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="Wa5-nT-7AB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_lupa" translatesAutoresizingMaskIntoConstraints="NO" id="tQ3-er-15A">
+                            <rect key="frame" x="327" y="12" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="BSM-C4-vrZ"/>
+                                <constraint firstAttribute="height" constant="30" id="t31-kw-GN8"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ol9-gf-B02" firstAttribute="top" secondItem="Mzh-pl-dr8" secondAttribute="bottom" id="49N-75-kwc"/>
+                        <constraint firstItem="Mzh-pl-dr8" firstAttribute="leading" secondItem="N4u-St-EtN" secondAttribute="leading" constant="18" id="FGa-q8-pkb"/>
+                        <constraint firstAttribute="bottom" secondItem="ol9-gf-B02" secondAttribute="bottom" id="LKh-mk-RHf"/>
+                        <constraint firstItem="tQ3-er-15A" firstAttribute="leading" secondItem="Mzh-pl-dr8" secondAttribute="trailing" constant="12" id="NJE-ea-AW5"/>
+                        <constraint firstItem="ol9-gf-B02" firstAttribute="leading" secondItem="N4u-St-EtN" secondAttribute="leading" constant="18" id="SWi-g4-3ta"/>
+                        <constraint firstAttribute="trailing" secondItem="tQ3-er-15A" secondAttribute="trailing" constant="18" id="SXd-Ri-003"/>
+                        <constraint firstItem="tQ3-er-15A" firstAttribute="centerY" secondItem="N4u-St-EtN" secondAttribute="centerY" id="gCJ-PJ-M7b"/>
+                        <constraint firstItem="tQ3-er-15A" firstAttribute="leading" secondItem="ol9-gf-B02" secondAttribute="trailing" constant="12" id="hx0-uA-QGB"/>
+                        <constraint firstItem="Mzh-pl-dr8" firstAttribute="top" secondItem="N4u-St-EtN" secondAttribute="top" id="sRK-gF-8CJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.81568627449999997" green="0.30980392159999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="N4u-St-EtN" secondAttribute="trailing" id="2Ta-pg-F8b"/>
+                <constraint firstItem="N4u-St-EtN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9oQ-H1-OAU"/>
+                <constraint firstItem="N4u-St-EtN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LiC-W3-Ye2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="73.5" y="33"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ico_lupa" width="156" height="156"/>
+    </resources>
+</document>

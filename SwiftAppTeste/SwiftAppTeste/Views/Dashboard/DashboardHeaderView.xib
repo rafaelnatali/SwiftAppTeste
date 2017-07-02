@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibView" customModule="SwiftAppTeste" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DashboardHeaderView" customModule="SwiftAppTeste" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6m-In-RUm" userLabel="Balance" customClass="XibView" customModule="SwiftAppTeste" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="FHp-oJ-fiv"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="DashboardBalanceView"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-LD-BIi" userLabel="Last Messages">
+                    <rect key="frame" x="0.0" y="150" width="375" height="240"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="35" text="+10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ws9-we-cVf">
+                            <rect key="frame" x="307" y="25" width="50" height="35"/>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.67843137249999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="HTp-Ye-CRb"/>
+                                <constraint firstAttribute="width" constant="50" id="V9a-ar-nax"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="13s-Mc-yLC">
+                            <rect key="frame" x="18" y="85" width="339" height="155"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="155" id="sdh-jh-vrD"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="0.0" id="OZx-HJ-U2E">
+                                <size key="itemSize" width="105" height="145"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-0r-nVN" userLabel="Border Right">
+                            <rect key="frame" x="371" y="0.0" width="4" height="240"/>
+                            <color key="backgroundColor" red="0.90588235294117647" green="0.67843137254901964" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="4" id="rN2-6c-dbl"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mensagens recentes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4S-wR-e6n">
+                            <rect key="frame" x="18" y="33" width="142.5" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9dW-0r-nVN" secondAttribute="trailing" id="0Hp-oY-Rl5"/>
+                        <constraint firstAttribute="bottom" secondItem="13s-Mc-yLC" secondAttribute="bottom" id="9dV-EH-gvb"/>
+                        <constraint firstItem="13s-Mc-yLC" firstAttribute="leading" secondItem="cEa-LD-BIi" secondAttribute="leading" constant="18" id="BNX-8G-V0p"/>
+                        <constraint firstAttribute="height" constant="240" id="OaM-Me-vW5"/>
+                        <constraint firstAttribute="bottom" secondItem="9dW-0r-nVN" secondAttribute="bottom" id="SME-IE-105"/>
+                        <constraint firstItem="9dW-0r-nVN" firstAttribute="top" secondItem="cEa-LD-BIi" secondAttribute="top" id="eRM-ZB-ebO"/>
+                        <constraint firstAttribute="trailing" secondItem="13s-Mc-yLC" secondAttribute="trailing" constant="18" id="fhd-do-BOH"/>
+                        <constraint firstItem="9dW-0r-nVN" firstAttribute="leading" secondItem="Ws9-we-cVf" secondAttribute="trailing" constant="14" id="iPl-Rq-fpX"/>
+                        <constraint firstItem="Ws9-we-cVf" firstAttribute="top" secondItem="cEa-LD-BIi" secondAttribute="top" constant="25" id="xJr-ok-al7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="W6m-In-RUm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1VP-tf-7LQ"/>
+                <constraint firstItem="cEa-LD-BIi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YKT-k6-IAR"/>
+                <constraint firstAttribute="trailing" secondItem="cEa-LD-BIi" secondAttribute="trailing" id="YgZ-Ao-c11"/>
+                <constraint firstItem="cEa-LD-BIi" firstAttribute="top" secondItem="W6m-In-RUm" secondAttribute="bottom" id="aqe-wj-fNE"/>
+                <constraint firstAttribute="trailing" secondItem="W6m-In-RUm" secondAttribute="trailing" id="tJn-OU-fMR"/>
+                <constraint firstItem="W6m-In-RUm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tkk-df-PyU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="recentMessagesCollectionView" destination="13s-Mc-yLC" id="QXd-L0-ZOJ"/>
+            </connections>
+            <point key="canvasLocation" x="42.5" y="64"/>
+        </view>
+    </objects>
+</document>

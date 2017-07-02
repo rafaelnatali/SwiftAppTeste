@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uRI-5V-AnI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="AnI-bH-9Ud">
+            <objects>
+                <navigationController toolbarHidden="NO" id="uRI-5V-AnI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="M2L-eT-vgf" customClass="BaseNavigationBar" customModule="SwiftAppTeste" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.81568627450980391" green="0.30980392156862746" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="1J3-Jr-K8H" customClass="BaseToolbar" customModule="SwiftAppTeste" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ApM-hG-785" kind="relationship" relationship="rootViewController" id="XJg-bL-C7Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRm-Fn-XN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34" y="14"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="BIC-is-Ujk">
+            <objects>
+                <viewController id="ApM-hG-785" customClass="DashboardViewController" customModule="SwiftAppTeste" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5UN-vv-5qP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wi1-Mn-GaA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="euU-O8-T62" customClass="DashboardView" customModule="SwiftAppTeste" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="310-Z8-b6O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.30980392159999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="310-Z8-b6O" firstAttribute="top" secondItem="5UN-vv-5qP" secondAttribute="bottom" id="4fh-Uc-N5g"/>
+                            <constraint firstItem="310-Z8-b6O" firstAttribute="leading" secondItem="euU-O8-T62" secondAttribute="leading" id="COI-Vi-39k"/>
+                            <constraint firstItem="Wi1-Mn-GaA" firstAttribute="top" secondItem="310-Z8-b6O" secondAttribute="bottom" priority="750" id="XEI-41-jfh"/>
+                            <constraint firstAttribute="trailing" secondItem="310-Z8-b6O" secondAttribute="trailing" id="bFW-lu-Vr3"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="recentMessagesTableView" destination="310-Z8-b6O" id="yHN-YV-hbD"/>
+                        </connections>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="uBt-J2-D28"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdq-y6-kCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="14"/>
+        </scene>
+    </scenes>
+</document>
