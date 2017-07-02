@@ -33,40 +33,40 @@
                                 <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTF-Jh-Inc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="lTF-Jh-Inc">
                                 <rect key="frame" x="18" y="101.5" width="183.5" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="id 3029400">
                                         <attributes>
                                             <color key="NSColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="17" name=".SFNSText"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="-">
                                         <attributes>
                                             <color key="NSColor" red="0.28627450980392155" green="0.50980392156862742" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="11/01/2016">
                                         <attributes>
                                             <color key="NSColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -75,17 +75,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="o78-Rd-3re" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lTF-Jh-Inc" secondAttribute="trailing" constant="15" id="BDn-ag-beJ"/>
                             <constraint firstItem="lTF-Jh-Inc" firstAttribute="leading" secondItem="Zpl-7B-UxN" secondAttribute="leading" constant="18" id="JpL-0Z-77S"/>
                             <constraint firstItem="lU3-Lf-xlc" firstAttribute="centerY" secondItem="Zpl-7B-UxN" secondAttribute="centerY" constant="-9" id="NZP-Nl-vPA"/>
                             <constraint firstAttribute="bottom" secondItem="o78-Rd-3re" secondAttribute="bottom" constant="15" id="SKe-ob-4Mi"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lTF-Jh-Inc" secondAttribute="bottom" priority="750" constant="5" id="bQm-6f-Rph"/>
                             <constraint firstAttribute="trailing" secondItem="o78-Rd-3re" secondAttribute="trailing" constant="18" id="gOc-I9-dMb"/>
                             <constraint firstItem="lTF-Jh-Inc" firstAttribute="top" secondItem="lU3-Lf-xlc" secondAttribute="bottom" constant="10" id="kjF-N0-IVJ"/>
-                            <constraint firstItem="o78-Rd-3re" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lU3-Lf-xlc" secondAttribute="trailing" constant="10" id="u0v-eW-rVg"/>
+                            <constraint firstItem="o78-Rd-3re" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lU3-Lf-xlc" secondAttribute="trailing" constant="15" id="u0v-eW-rVg"/>
                             <constraint firstItem="lU3-Lf-xlc" firstAttribute="leading" secondItem="Zpl-7B-UxN" secondAttribute="leading" constant="18" id="wsm-dC-Kiw"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zz-E8-3ST">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zz-E8-3ST" userLabel="Border Right">
                         <rect key="frame" x="371" y="0.0" width="4" height="160"/>
                         <color key="backgroundColor" red="0.28627450980392155" green="0.50980392156862742" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
