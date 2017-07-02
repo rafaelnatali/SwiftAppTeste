@@ -29,6 +29,8 @@
 		568924EB1F073DA200C719CD /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568924EA1F073DA200C719CD /* XibView.swift */; };
 		568924ED1F07483B00C719CD /* NSObject+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568924EC1F07483B00C719CD /* NSObject+Helper.swift */; };
 		5693A9461F06EDD3009F213B /* BaseNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5693A9451F06EDD3009F213B /* BaseNavigationBar.swift */; };
+		56EB39751F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39741F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift */; };
+		56EB39781F099541004B0B8E /* MySalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39771F099541004B0B8E /* MySalesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		568924EA1F073DA200C719CD /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		568924EC1F07483B00C719CD /* NSObject+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Helper.swift"; sourceTree = "<group>"; };
 		5693A9451F06EDD3009F213B /* BaseNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationBar.swift; sourceTree = "<group>"; };
+		56EB39741F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleDescriptionListDatasourceAndDelegate.swift; sourceTree = "<group>"; };
+		56EB39771F099541004B0B8E /* MySalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySalesViewController.swift; sourceTree = "<group>"; };
 		79C30C3DC18289447926D74F /* Pods-SwiftAppTeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAppTeste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAppTeste/Pods-SwiftAppTeste.debug.xcconfig"; sourceTree = "<group>"; };
 		A029356C24C1A34E1A65FBD5 /* Pods_SwiftAppTeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAppTeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0305C45A5148E7D8790EB5A /* Pods-SwiftAppTeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAppTeste.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAppTeste/Pods-SwiftAppTeste.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		56034DFE1F06CE1000DAA4E0 /* SwiftAppTeste */ = {
 			isa = PBXGroup;
 			children = (
+				56EB39731F098DD5004B0B8E /* Datasources and Delegates */,
 				560A62B11F083B2400AE8B28 /* View Models */,
 				565ADA491F070BFF00307BAC /* Utils */,
 				5666B7071F06F5EB00FACC88 /* Constants */,
@@ -162,6 +167,7 @@
 		5672792B1F06DA6E00279B62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				56EB39761F0994F3004B0B8E /* My Sales */,
 				56C70BC61F06F25700FC7EC9 /* Dashboard */,
 				567279331F06DB6A00279B62 /* Menu */,
 				5672792C1F06DA9B00279B62 /* BaseViewController.swift */,
@@ -214,6 +220,22 @@
 				568924DE1F07305B00C719CD /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		56EB39731F098DD5004B0B8E /* Datasources and Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				56EB39741F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift */,
+			);
+			path = "Datasources and Delegates";
+			sourceTree = "<group>";
+		};
+		56EB39761F0994F3004B0B8E /* My Sales */ = {
+			isa = PBXGroup;
+			children = (
+				56EB39771F099541004B0B8E /* MySalesViewController.swift */,
+			);
+			path = "My Sales";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,9 +368,11 @@
 				56034E001F06CE1000DAA4E0 /* AppDelegate.swift in Sources */,
 				568924E71F073BEB00C719CD /* DashboardHeaderView.swift in Sources */,
 				568924DF1F07305B00C719CD /* DashboardViewController.swift in Sources */,
+				56EB39781F099541004B0B8E /* MySalesViewController.swift in Sources */,
 				560A62B31F083B8200AE8B28 /* UserRoundedPictureCollectionViewCellModel.swift in Sources */,
 				5693A9461F06EDD3009F213B /* BaseNavigationBar.swift in Sources */,
 				561BFEA91F0888A800645CEF /* SaleDescriptionTableViewCell.swift in Sources */,
+				56EB39751F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift in Sources */,
 				568924E11F07307900C719CD /* DashboardView.swift in Sources */,
 				5672792D1F06DA9B00279B62 /* BaseViewController.swift in Sources */,
 				5666B7091F06F60A00FACC88 /* Constants.swift in Sources */,

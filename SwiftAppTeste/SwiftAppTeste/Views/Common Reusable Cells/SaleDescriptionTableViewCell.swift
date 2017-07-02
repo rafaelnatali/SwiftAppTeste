@@ -10,6 +10,9 @@ import UIKit
 
 class SaleDescriptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak private var iconAlert: UIImageView?
+    @IBOutlet weak private var borderRight: UIView?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +30,14 @@ class SaleDescriptionTableViewCell: UITableViewCell {
             colorHexvalue = Constants.ColorsHex.kColorF4F4F4
         }
         self.backgroundColor = UIColor(colorHexvalue)
+    }
+    
+    func changeBorderRightVisibility(show: Bool) {
+        borderRight?.isHidden = !show
+    }
+    
+    func changeIconAlertVisibility(show: Bool) {
+        iconAlert?.isHidden = !show
     }
     
 }

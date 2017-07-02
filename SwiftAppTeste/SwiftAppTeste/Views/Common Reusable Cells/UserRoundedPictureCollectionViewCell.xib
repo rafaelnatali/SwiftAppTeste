@@ -67,8 +67,8 @@
             </constraints>
             <size key="customSize" width="50" height="103"/>
             <connections>
-                <outlet property="nameText" destination="k3t-Ge-oym" id="2Z6-AC-q0F"/>
-                <outlet property="roundedButton" destination="M7o-Yq-wOq" id="vs2-gf-Po7"/>
+                <outlet property="nameText" destination="k3t-Ge-oym" id="PBZ-oh-mQT"/>
+                <outlet property="roundedButton" destination="M7o-Yq-wOq" id="Oww-nz-cFi"/>
             </connections>
             <point key="canvasLocation" x="-5.5" y="21.5"/>
         </collectionViewCell>

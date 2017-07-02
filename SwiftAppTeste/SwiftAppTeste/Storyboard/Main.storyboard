@@ -30,6 +30,7 @@
                     </toolbar>
                     <connections>
                         <segue destination="ApM-hG-785" kind="relationship" relationship="rootViewController" id="XJg-bL-C7Q"/>
+                        <segue destination="190-z2-dQm" kind="show" identifier="ShowMySales" id="D3M-9W-qSC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRm-Fn-XN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,6 +73,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdq-y6-kCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1110" y="14"/>
+        </scene>
+        <!--My Sales View Controller-->
+        <scene sceneID="6G9-RQ-K5P">
+            <objects>
+                <viewController id="190-z2-dQm" customClass="MySalesViewController" customModule="SwiftAppTeste" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VzS-xK-KVC"/>
+                        <viewControllerLayoutGuide type="bottom" id="OsS-q9-yXh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UYi-GA-SjA">
+                        <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zJR-U8-8cm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OsS-q9-yXh" firstAttribute="top" secondItem="zJR-U8-8cm" secondAttribute="bottom" id="FwH-1b-dWV"/>
+                            <constraint firstAttribute="trailing" secondItem="zJR-U8-8cm" secondAttribute="trailing" id="N8i-bd-44L"/>
+                            <constraint firstItem="zJR-U8-8cm" firstAttribute="leading" secondItem="UYi-GA-SjA" secondAttribute="leading" id="Zwk-1m-S65"/>
+                            <constraint firstItem="zJR-U8-8cm" firstAttribute="top" secondItem="UYi-GA-SjA" secondAttribute="top" id="nDh-tT-GWR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="zJR-U8-8cm" id="6t6-gK-6x1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bm3-PZ-IVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="780"/>
         </scene>
     </scenes>
 </document>

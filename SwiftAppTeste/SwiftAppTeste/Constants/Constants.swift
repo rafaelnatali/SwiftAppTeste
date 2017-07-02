@@ -25,4 +25,6 @@ struct Constants {
         static let kColor4982C5 = "#4982C5"
         static let kColor919191 = "#919191"
     }
+    
+    
 }

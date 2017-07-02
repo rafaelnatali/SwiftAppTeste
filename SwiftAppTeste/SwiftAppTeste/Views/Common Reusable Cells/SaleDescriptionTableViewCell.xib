@@ -28,13 +28,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="250" text="Como decorar uma festa infantil maravilhosa..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU3-Lf-xlc">
-                                <rect key="frame" x="18" y="50.5" width="197.5" height="41"/>
+                                <rect key="frame" x="18" y="48.5" width="197.5" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="lTF-Jh-Inc">
-                                <rect key="frame" x="18" y="101.5" width="183.5" height="20"/>
+                                <rect key="frame" x="18" y="99.5" width="183.5" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="id 3029400">
                                         <attributes>
@@ -72,14 +72,23 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_alert" translatesAutoresizingMaskIntoConstraints="NO" id="Wy5-T5-aqP">
+                                <rect key="frame" x="327" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lGw-ms-jwS"/>
+                                    <constraint firstAttribute="width" constant="30" id="zdK-iu-oV4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o78-Rd-3re" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lTF-Jh-Inc" secondAttribute="trailing" constant="15" id="BDn-ag-beJ"/>
+                            <constraint firstItem="Wy5-T5-aqP" firstAttribute="top" secondItem="Zpl-7B-UxN" secondAttribute="top" constant="20" id="JPR-R5-KOC"/>
                             <constraint firstItem="lTF-Jh-Inc" firstAttribute="leading" secondItem="Zpl-7B-UxN" secondAttribute="leading" constant="18" id="JpL-0Z-77S"/>
-                            <constraint firstItem="lU3-Lf-xlc" firstAttribute="centerY" secondItem="Zpl-7B-UxN" secondAttribute="centerY" constant="-9" id="NZP-Nl-vPA"/>
+                            <constraint firstItem="lU3-Lf-xlc" firstAttribute="centerY" secondItem="Zpl-7B-UxN" secondAttribute="centerY" constant="-11" id="NZP-Nl-vPA"/>
                             <constraint firstAttribute="bottom" secondItem="o78-Rd-3re" secondAttribute="bottom" constant="15" id="SKe-ob-4Mi"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lTF-Jh-Inc" secondAttribute="bottom" priority="750" constant="5" id="bQm-6f-Rph"/>
+                            <constraint firstAttribute="trailing" secondItem="Wy5-T5-aqP" secondAttribute="trailing" constant="18" id="bUq-cS-863"/>
                             <constraint firstAttribute="trailing" secondItem="o78-Rd-3re" secondAttribute="trailing" constant="18" id="gOc-I9-dMb"/>
                             <constraint firstItem="lTF-Jh-Inc" firstAttribute="top" secondItem="lU3-Lf-xlc" secondAttribute="bottom" constant="10" id="kjF-N0-IVJ"/>
                             <constraint firstItem="o78-Rd-3re" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lU3-Lf-xlc" secondAttribute="trailing" constant="15" id="u0v-eW-rVg"/>
@@ -105,7 +114,14 @@
                     <constraint firstItem="Zpl-7B-UxN" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="iVQ-KX-nUu"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="borderRight" destination="9zz-E8-3ST" id="dsO-sW-jNi"/>
+                <outlet property="iconAlert" destination="Wy5-T5-aqP" id="gc6-MX-xA7"/>
+            </connections>
             <point key="canvasLocation" x="101.5" y="4"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ico_alert" width="94" height="94"/>
+    </resources>
 </document>

@@ -10,7 +10,10 @@ import UIKit
 import UIColor_Hex_Swift
 
 class BaseViewController: UIViewController {
-
+    func segue(button: UIButton) {
+        self.navigationController?.performSegue(withIdentifier: "ShowMySales", sender: self.navigationController)
+    }
+    
     func createToolbarItem(imageName: String, size: CGSize) -> UIBarButtonItem {
         let button: UIButton = UIButton(type: .custom)
         button.imageView?.contentMode = .scaleAspectFit
@@ -18,6 +21,8 @@ class BaseViewController: UIViewController {
         button.frame = CGRect(origin: CGPoint.zero, size: size)
         
         let barButtonItem: UIBarButtonItem = UIBarButtonItem.init(customView: button)
+        
+        button.addTarget(self, action: #selector(segue(button:)), for: .touchUpInside)
         
         return barButtonItem;
     }

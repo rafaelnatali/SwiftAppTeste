@@ -8,9 +8,12 @@
 
 import UIKit
 
-class DashboardViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    //MARK: - Properties 
     
     weak var dashboardHeaderView: DashboardHeaderView?
+    private var tableViewList: SaleDescriptionListDatasourceAndDelegate?
     
     var dashboardView: DashboardView {
         get {
@@ -27,6 +30,8 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
 
     }
+    
+    //MARK: - Life Cycle
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,13 +45,16 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    func reusableIdentifierForRecentMessageTableView() -> String {
-        return String(format: "%@%@", self.className, SaleDescriptionTableViewCell.className)
-    }
+    //MARK: - Methods
     
     func configureRecentMessagesTableView() {
-        dashboardView.recentMessagesTableView.delegate = self
-        dashboardView.recentMessagesTableView.dataSource = self
+        tableViewList = SaleDescriptionListDatasourceAndDelegate(identifierForCell: self.className,
+                                                                 datasource: Array.init(repeating: NSObject(), count: 10))
+        tableViewList?.delegate = self
+        tableViewList?.registerCell(tableView: dashboardView.recentMessagesTableView)
+        
+        dashboardView.recentMessagesTableView.delegate = tableViewList
+        dashboardView.recentMessagesTableView.dataSource = tableViewList
         
         let content = XibView()
         content.frame = CGRect(origin: CGPoint.zero,
@@ -57,9 +65,6 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         let tableHeaderView = content.contentView
         dashboardView.recentMessagesTableView.tableHeaderView = tableHeaderView
         dashboardHeaderView = tableHeaderView as? DashboardHeaderView
-        
-        let nibCell = UINib.init(nibName: SaleDescriptionTableViewCell.className, bundle: Bundle(for: SaleDescriptionTableViewCell.self))
-        dashboardView.recentMessagesTableView.register(nibCell, forCellReuseIdentifier: reusableIdentifierForRecentMessageTableView())
     }
     
     func reusableIdentifierForRecentMessagesCollectionView() -> String {
@@ -73,26 +78,16 @@ class DashboardViewController: BaseViewController, UITableViewDelegate, UITableV
         let nibCell = UINib.init(nibName: UserRoundedPictureCollectionViewCell.className, bundle: Bundle(for: UserRoundedPictureCollectionViewCell.self))
         dashboardHeaderView?.recentMessagesCollectionView.register(nibCell, forCellWithReuseIdentifier: reusableIdentifierForRecentMessagesCollectionView())
     }
-    
-    //MARK: - UITableViewDataSource
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifierForRecentMessageTableView(), for: indexPath)
-        cell.selectionStyle = .none
-        guard cell is SaleDescriptionTableViewCell
-            else { return cell }
+    //MARK: - SaleDescriptionListDelegate
+    
+    func cellDidLoad(tableView: UITableView, indexPath: IndexPath, cell: SaleDescriptionTableViewCell) {
         
-        let castCell: SaleDescriptionTableViewCell = cell as! SaleDescriptionTableViewCell
-        castCell.changeBackgroundColor(indexPath: indexPath)
-        
-        return castCell
+        cell.changeIconAlertVisibility(show: false)
     }
     
-
     //MARK: - UICollectionViewDataSource
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifierForRecentMessagesCollectionView(), for: indexPath)

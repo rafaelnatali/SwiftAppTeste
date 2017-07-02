@@ -10,8 +10,8 @@ import UIKit
 
 class UserRoundedPictureCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak private var roundedButton: UIButton!
-    @IBOutlet weak private var nameText: UILabel!
+    @IBOutlet weak private var roundedButton: UIButton?
+    @IBOutlet weak private var nameText: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,13 +23,14 @@ class UserRoundedPictureCollectionViewCell: UICollectionViewCell {
         roundedButton?.setTitle(model.hasPicture ? String() : model.initialNameCapital, for: .normal)
         let image = model.hasPicture ? UIImage(named: model.pictureName!) : UIImage()
         
-        roundedButton.imageView?.contentMode = .center
-        roundedButton.setImage(image, for: .normal)
-        roundedButton.backgroundColor = UIColor(model.backgroundColorHexString)
+        roundedButton?.imageView?.contentMode = .center
+        roundedButton?.setImage(image, for: .normal)
+        roundedButton?.backgroundColor = UIColor(model.backgroundColorHexString)
         
         nameText?.text = model.name
-        let sizeLabel = nameText.sizeThatFits(CGSize(width: self.bounds.width, height: 35))
-        nameText.frame.size.height = sizeLabel.height
+        guard let sizeLabel = nameText?.sizeThatFits(CGSize(width: self.bounds.width, height: 35))
+            else { return }
+        nameText?.frame.size.height = sizeLabel.height
     }
 
 }
