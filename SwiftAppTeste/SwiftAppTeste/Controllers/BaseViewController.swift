@@ -10,6 +10,19 @@ import UIKit
 import UIColor_Hex_Swift
 
 class BaseViewController: UIViewController {
+    
+    //MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        setupNavigationBar()
+        insertToolbarItems()
+    }
+    
+    //MARK: - Methods
+    
     func replaceRootViewController(button: UIButton) {
         guard let viewController = NavigationHelper.controllerFor(menuOption: MenuOptions(rawValue: button.tag))
             else { return }
@@ -71,29 +84,4 @@ class BaseViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.ImageNames.kIconImageName), style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        setupNavigationBar()
-        insertToolbarItems()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
