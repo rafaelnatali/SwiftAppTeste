@@ -10,13 +10,19 @@ import UIKit
 
 class UserRoundedPictureCollectionViewCell: UICollectionViewCell {
 
+    //MARK: - Properties
+    
     @IBOutlet weak private var roundedButton: UIButton?
     @IBOutlet weak private var nameText: UILabel?
+    
+    //MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    //MARK: - Methods
     
     func setup(model: UserRoundedPictureCollectionViewCellModel) {
         

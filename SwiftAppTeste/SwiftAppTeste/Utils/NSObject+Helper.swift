@@ -9,9 +9,8 @@
 import Foundation
 
 extension NSObject {
-    var className: String {
-        return String(describing: type(of: self))
-    }
+    
+    //MARK: - Static Methods
     
     class var className: String {
         return String(describing: self)
@@ -19,5 +18,11 @@ extension NSObject {
     
     class func randomNumber(upperRange: UInt32) -> UInt32 {
         return UInt32(arc4random_uniform(upperRange));
+    }
+    
+    //MARK: - Methods
+    
+    var className: String {
+        return String(describing: type(of: self))
     }
 }

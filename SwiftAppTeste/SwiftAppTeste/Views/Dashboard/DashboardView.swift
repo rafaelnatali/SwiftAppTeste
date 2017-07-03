@@ -10,7 +10,7 @@ import UIKit
 
 class DashboardView: UIView {
     
-    @IBOutlet weak var recentMessagesTableView: UITableView!
+    @IBOutlet weak var recentMessagesTableView: UITableView?
 
     /*
     // Only override draw() if you perform custom drawing.

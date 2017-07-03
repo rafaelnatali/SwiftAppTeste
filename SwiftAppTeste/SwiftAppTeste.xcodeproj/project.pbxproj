@@ -34,6 +34,7 @@
 		56EB397B1F09BC1F004B0B8E /* MyMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB397A1F09BC1F004B0B8E /* MyMessagesViewController.swift */; };
 		56EB39801F09CE36004B0B8E /* MenuEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB397F1F09CE36004B0B8E /* MenuEnum.swift */; };
 		56EB39831F09CE52004B0B8E /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39821F09CE52004B0B8E /* NavigationHelper.swift */; };
+		56EB39851F09D201004B0B8E /* MessageGridDatasourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39841F09D201004B0B8E /* MessageGridDatasourceAndDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		56EB397A1F09BC1F004B0B8E /* MyMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessagesViewController.swift; sourceTree = "<group>"; };
 		56EB397F1F09CE36004B0B8E /* MenuEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuEnum.swift; sourceTree = "<group>"; };
 		56EB39821F09CE52004B0B8E /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		56EB39841F09D201004B0B8E /* MessageGridDatasourceAndDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageGridDatasourceAndDelegate.swift; sourceTree = "<group>"; };
 		79C30C3DC18289447926D74F /* Pods-SwiftAppTeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAppTeste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAppTeste/Pods-SwiftAppTeste.debug.xcconfig"; sourceTree = "<group>"; };
 		A029356C24C1A34E1A65FBD5 /* Pods_SwiftAppTeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAppTeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0305C45A5148E7D8790EB5A /* Pods-SwiftAppTeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAppTeste.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAppTeste/Pods-SwiftAppTeste.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				56EB39741F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift */,
+				56EB39841F09D201004B0B8E /* MessageGridDatasourceAndDelegate.swift */,
 			);
 			path = "Datasources and Delegates";
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				560A62B31F083B8200AE8B28 /* UserRoundedPictureCollectionViewCellModel.swift in Sources */,
 				5693A9461F06EDD3009F213B /* BaseNavigationBar.swift in Sources */,
 				561BFEA91F0888A800645CEF /* SaleDescriptionTableViewCell.swift in Sources */,
+				56EB39851F09D201004B0B8E /* MessageGridDatasourceAndDelegate.swift in Sources */,
 				56EB39831F09CE52004B0B8E /* NavigationHelper.swift in Sources */,
 				56EB39751F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift in Sources */,
 				568924E11F07307900C719CD /* DashboardView.swift in Sources */,

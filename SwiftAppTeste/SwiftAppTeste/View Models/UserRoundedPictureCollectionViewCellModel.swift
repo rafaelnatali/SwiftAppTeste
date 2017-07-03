@@ -10,10 +10,14 @@ import Foundation
 
 class UserRoundedPictureCollectionViewCellModel: NSObject {
     
+    //MARK: - Properties
+    
     var pictureURL: String?
     var pictureName: String?
     var name: String?
     var backgroundColorHexString: String = Constants.ColorsHex.kColorFFFFFF
+    
+    //MARK: - Methods
     
     var hasPicture: Bool {
         return (pictureURL != nil) || (pictureName != nil)
@@ -28,6 +32,8 @@ class UserRoundedPictureCollectionViewCellModel: NSObject {
             else { return nil }
         return String(initial)
     }
+    
+    //MARK: - Mock
     
     class func generateMock(numberOfElements: Int) -> [UserRoundedPictureCollectionViewCellModel] {
         var elements = [UserRoundedPictureCollectionViewCellModel]()

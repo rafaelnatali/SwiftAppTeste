@@ -11,7 +11,7 @@ import UIColor_Hex_Swift
 
 class BaseViewController: UIViewController {
     func replaceRootViewController(button: UIButton) {
-        guard let viewController = controllerFor(menuOption: MenuOptions(rawValue: button.tag))
+        guard let viewController = NavigationHelper.controllerFor(menuOption: MenuOptions(rawValue: button.tag))
             else { return }
         
         self.navigationController?.viewControllers = [viewController]

@@ -10,9 +10,13 @@ import UIKit
 
 class MySalesViewController: BaseViewController, SaleDescriptionListDelegate {
 
+    //MARK: - Properties
+    
     @IBOutlet private weak var tableView: UITableView?
     
-    private var tableViewList: SaleDescriptionListDatasourceAndDelegate?
+    private var saleList: SaleDescriptionListDatasourceAndDelegate?
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,36 +25,21 @@ class MySalesViewController: BaseViewController, SaleDescriptionListDelegate {
         configureTableView()
     }
 
-    func configureTableView() {
-        tableViewList = SaleDescriptionListDatasourceAndDelegate(identifierForCell: self.className,
-                                                                 datasource: Array.init(repeating: NSObject(), count: 50))
-        tableViewList?.delegate = self
-        tableViewList?.registerCell(tableView: tableView!)
-        
-        tableView?.delegate = tableViewList
-        tableView?.dataSource = tableViewList
-    }
+    //MARK: - Methods
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func configureTableView() {
+        saleList = SaleDescriptionListDatasourceAndDelegate(identifierForCell: self.className,
+                                                                 datasource: Array.init(repeating: NSObject(), count: 50))
+        saleList?.delegate = self
+        saleList?.registerCell(tableView: tableView!)
+        
+        tableView?.delegate = saleList
+        tableView?.dataSource = saleList
     }
     
     // MARK: - SaleDescriptionListDelegate
     func cellDidLoad(tableView: UITableView, indexPath: IndexPath, cell: SaleDescriptionTableViewCell) {
-        
         cell.changeBorderRightVisibility(show: false)
+        cell.changeIconAlertVisibility(show: indexPath.row < 2)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

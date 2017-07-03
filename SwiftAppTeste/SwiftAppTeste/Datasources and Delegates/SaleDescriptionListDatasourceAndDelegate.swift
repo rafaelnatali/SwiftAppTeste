@@ -15,32 +15,39 @@ protocol SaleDescriptionListDelegate: NSObjectProtocol {
 
 class SaleDescriptionListDatasourceAndDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: - Properties
+    
     private let identifierForCell: String
     private let datasource: [NSObject]
     weak var delegate: SaleDescriptionListDelegate?
+    
+    //MARK: - Initializers    
     
     init(identifierForCell: String, datasource: [NSObject]) {
         self.identifierForCell = identifierForCell
         self.datasource = datasource
     }
     
-    func reusableIdentifierForRecentMessageTableView() -> String {
+    //MARK: - Methods
+    
+    func reusableIdentifier() -> String {
         return String(format: "%@%@", self.identifierForCell, SaleDescriptionTableViewCell.className)
     }
     
     func registerCell(tableView: UITableView) {
         let nibCell = UINib.init(nibName: SaleDescriptionTableViewCell.className, bundle: Bundle(for: SaleDescriptionTableViewCell.self))
-        tableView.register(nibCell, forCellReuseIdentifier: reusableIdentifierForRecentMessageTableView())
+        tableView.register(nibCell, forCellReuseIdentifier: reusableIdentifier())
         
     }
     
     //MARK: - UITableViewDataSource
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifierForRecentMessageTableView(), for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifier(), for: indexPath)
         cell.selectionStyle = .none
         guard cell is SaleDescriptionTableViewCell
             else { return cell }

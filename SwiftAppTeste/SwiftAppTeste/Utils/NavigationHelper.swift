@@ -9,20 +9,26 @@
 import Foundation
 import UIKit
 
-func controllerFor(menuOption: MenuOptions?) -> UIViewController? {
-    guard menuOption != nil else {
-        return nil
-    }
+
+class NavigationHelper: NSObject {
     
-    let option = menuOption!
-    var viewController: UIViewController?
-    switch option {
-    case .MenuOptionDashboard:
-        viewController = UIStoryboard(name: Constants.StoryboardNames.kMainSB, bundle: nil).instantiateViewController(withIdentifier: Constants.ControllerIdentifiers.kDashboardVC)
-    case .MenuOptionMySales:
-        viewController = UIStoryboard(name: Constants.StoryboardNames.kMainSB, bundle: nil).instantiateViewController(withIdentifier: Constants.ControllerIdentifiers.kMySalesVC)
-    case .MenuOptionMyMessages:
-        viewController = UIStoryboard(name: Constants.StoryboardNames.kMainSB, bundle: nil).instantiateViewController(withIdentifier: Constants.ControllerIdentifiers.kMyMessagesVC)
+    //MARK: - Static Methods
+    
+    class func controllerFor(menuOption: MenuOptions?) -> UIViewController? {
+        guard menuOption != nil else {
+            return nil
+        }
+        
+        let option = menuOption!
+        var viewController: UIViewController?
+        switch option {
+        case .MenuOptionDashboard:
+            viewController = UIStoryboard(name: Constants.StoryboardNames.kMainSB, bundle: nil).instantiateViewController(withIdentifier: Constants.ControllerIdentifiers.kDashboardVC)
+        case .MenuOptionMySales:
+            viewController = UIStoryboard(name: Constants.StoryboardNames.kMainSB, bundle: nil).instantiateViewController(withIdentifier: Constants.ControllerIdentifiers.kMySalesVC)
+        case .MenuOptionMyMessages:
+            viewController = UIStoryboard(name: Constants.StoryboardNames.kMainSB, bundle: nil).instantiateViewController(withIdentifier: Constants.ControllerIdentifiers.kMyMessagesVC)
+        }
+        return viewController
     }
-    return viewController
 }

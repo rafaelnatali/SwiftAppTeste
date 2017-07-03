@@ -11,8 +11,12 @@ import UIKit
 @IBDesignable
 class XibView: UIView {
     
+    //MARK: - Properties
+    
     var contentView: UIView?
     @IBInspectable var nibName: String?
+    
+    //MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +30,8 @@ class XibView: UIView {
         xibSetup()
         contentView?.prepareForInterfaceBuilder()
     }
+    
+    //MARK: - Methods
     
     func xibSetup() {
         guard let view = loadViewFromNib() else { return }
@@ -43,13 +49,4 @@ class XibView: UIView {
         let nib = UINib(nibName: nibName!, bundle: Bundle(for: type(of: self)))
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

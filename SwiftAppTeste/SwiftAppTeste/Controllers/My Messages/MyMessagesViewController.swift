@@ -8,11 +8,17 @@
 
 import UIKit
 
-class MyMessagesViewController: BaseViewController, UICollectionViewDataSource {
+class MyMessagesViewController: BaseViewController, MessageGridDelegate {
 
+    //MARK: - Properties
+    
     @IBOutlet private weak var collectionView: UICollectionView?
     
+    private var messageGrid: MessageGridDatasourceAndDelegate?
+    
     lazy var datasource: [UserRoundedPictureCollectionViewCellModel] = UserRoundedPictureCollectionViewCellModel.generateMock(numberOfElements: 80)
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,51 +27,25 @@ class MyMessagesViewController: BaseViewController, UICollectionViewDataSource {
         configureCollectionView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func reusableIdentifierForRecentMessagesCollectionView() -> String {
-        return String(format: "%@%@", self.className, UserRoundedPictureCollectionViewCellModel.className)
-    }
+    //MARK: - Methods
     
     func configureCollectionView() {
-        collectionView?.dataSource = self
+        guard let collectionView = self.collectionView else {
+            return
+        }
         
-        let nibCell = UINib.init(nibName: UserRoundedPictureCollectionViewCell.className, bundle: Bundle(for: UserRoundedPictureCollectionViewCell.self))
-        collectionView?.register(nibCell, forCellWithReuseIdentifier: reusableIdentifierForRecentMessagesCollectionView())
+        messageGrid = MessageGridDatasourceAndDelegate(identifierForCell: self.className, datasource: self.datasource)
+        messageGrid?.registerCell(collectionView: collectionView)
+        
+        collectionView.delegate = messageGrid
+        collectionView.dataSource = messageGrid
     }
     
-    //MARK: - UICollectionViewDataSource
+    //MARK: - MessageGridDelegate
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func cellDidLoad(collectionView: UICollectionView, indexPath: IndexPath, cell: UserRoundedPictureCollectionViewCell) {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifierForRecentMessagesCollectionView(), for: indexPath)
         
-        let model = datasource[indexPath.row]
-        
-        guard cell is UserRoundedPictureCollectionViewCell
-            else { return cell }
-        
-        let castCell: UserRoundedPictureCollectionViewCell = cell as! UserRoundedPictureCollectionViewCell
-        castCell.setup(model: model)
-        
-        return castCell
+        NSObject()
     }
-    
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasource.count
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

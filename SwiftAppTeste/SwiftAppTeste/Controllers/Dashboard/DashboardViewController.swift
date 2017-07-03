@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class DashboardViewController: BaseViewController, SaleDescriptionListDelegate {
     
     //MARK: - Properties 
     
-    weak var dashboardHeaderView: DashboardHeaderView?
-    private var tableViewList: SaleDescriptionListDatasourceAndDelegate?
+    private weak var dashboardHeaderView: DashboardHeaderView?
+    private var saleList: SaleDescriptionListDatasourceAndDelegate?
+    private var messageGrid: MessageGridDatasourceAndDelegate?
     
     var dashboardView: DashboardView {
         get {
@@ -26,9 +27,6 @@ class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-
     }
     
     //MARK: - Life Cycle
@@ -42,19 +40,22 @@ class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: - Methods
     
     func configureRecentMessagesTableView() {
-        tableViewList = SaleDescriptionListDatasourceAndDelegate(identifierForCell: self.className,
-                                                                 datasource: Array.init(repeating: NSObject(), count: 10))
-        tableViewList?.delegate = self
-        tableViewList?.registerCell(tableView: dashboardView.recentMessagesTableView)
+        guard let tableView = self.dashboardView.recentMessagesTableView else {
+            return
+        }
         
-        dashboardView.recentMessagesTableView.delegate = tableViewList
-        dashboardView.recentMessagesTableView.dataSource = tableViewList
+        saleList = SaleDescriptionListDatasourceAndDelegate(identifierForCell: self.className,
+                                                                 datasource: Array.init(repeating: NSObject(), count: 10))
+        saleList?.delegate = self
+        saleList?.registerCell(tableView: tableView)
+        
+        tableView.delegate = saleList
+        tableView.dataSource = saleList
         
         let content = XibView()
         content.frame = CGRect(origin: CGPoint.zero,
@@ -63,7 +64,7 @@ class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, 
         content.nibName = DashboardHeaderView.className
         content.xibSetup()
         let tableHeaderView = content.contentView
-        dashboardView.recentMessagesTableView.tableHeaderView = tableHeaderView
+        tableView.tableHeaderView = tableHeaderView
         dashboardHeaderView = tableHeaderView as? DashboardHeaderView
     }
     
@@ -72,11 +73,16 @@ class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, 
     }
     
     func configureRecentMessagesCollectionView() {
-        dashboardHeaderView?.recentMessagesCollectionView.delegate = self
-        dashboardHeaderView?.recentMessagesCollectionView.dataSource = self
+        guard let collectionView = dashboardHeaderView?.recentMessagesCollectionView else {
+            return
+        }
         
-        let nibCell = UINib.init(nibName: UserRoundedPictureCollectionViewCell.className, bundle: Bundle(for: UserRoundedPictureCollectionViewCell.self))
-        dashboardHeaderView?.recentMessagesCollectionView.register(nibCell, forCellWithReuseIdentifier: reusableIdentifierForRecentMessagesCollectionView())
+        messageGrid = MessageGridDatasourceAndDelegate(identifierForCell: self.className,
+                                                        datasource: recentMessagesCollectionViewDatasource)
+        messageGrid?.registerCell(collectionView: collectionView)
+        
+        collectionView.delegate = messageGrid
+        collectionView.dataSource = messageGrid
     }
 
     //MARK: - SaleDescriptionListDelegate
@@ -85,37 +91,4 @@ class DashboardViewController: BaseViewController, SaleDescriptionListDelegate, 
         
         cell.changeIconAlertVisibility(show: false)
     }
-    
-    //MARK: - UICollectionViewDataSource
-    
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifierForRecentMessagesCollectionView(), for: indexPath)
-        
-        let model = recentMessagesCollectionViewDatasource[indexPath.row]
-        
-        guard cell is UserRoundedPictureCollectionViewCell
-            else { return cell }
-        
-        let castCell: UserRoundedPictureCollectionViewCell = cell as! UserRoundedPictureCollectionViewCell
-        castCell.setup(model: model)
-        
-        return castCell
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recentMessagesCollectionViewDatasource.count
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

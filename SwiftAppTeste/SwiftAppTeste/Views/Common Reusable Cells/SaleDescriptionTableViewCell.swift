@@ -10,19 +10,27 @@ import UIKit
 
 class SaleDescriptionTableViewCell: UITableViewCell {
 
+    //MARK: - Properties
+    
     @IBOutlet weak private var iconAlert: UIImageView?
     @IBOutlet weak private var borderRight: UIView?
+    
+    //MARK: - Life Cycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    //MARK: - Overrides
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+    
+    //MARK: - Methods
     
     func changeBackgroundColor(indexPath: IndexPath) {
         var colorHexvalue = Constants.ColorsHex.kColorFFFFFF
