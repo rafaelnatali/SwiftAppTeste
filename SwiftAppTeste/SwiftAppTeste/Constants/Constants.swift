@@ -24,6 +24,8 @@ struct Constants {
         static let kColorCE4251 = "#CE4251"
         static let kColor4982C5 = "#4982C5"
         static let kColor919191 = "#919191"
+        static let kColorD04F2A = "#D04F2A"
+        static let kColorE7AD45 = "#E7AD45"
     }
     
     struct StoryboardNames {

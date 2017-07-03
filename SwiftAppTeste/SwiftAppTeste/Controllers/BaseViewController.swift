@@ -24,9 +24,12 @@ class BaseViewController: UIViewController {
     //MARK: - Methods
     
     func replaceRootViewController(button: UIButton) {
-        guard let viewController = NavigationHelper.controllerFor(menuOption: MenuOptions(rawValue: button.tag))
+        let option = MenuOptions(rawValue: button.tag)
+        
+        guard let viewController = NavigationHelper.controllerFor(menuOption: option)
             else { return }
         
+        self.navigationController?.navigationBar.barTintColor = NavigationHelper.navigationBarTintColorFor(menuOption: option)
         self.navigationController?.viewControllers = [viewController]
     }
     
