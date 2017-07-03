@@ -24,9 +24,6 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Yq-wOq">
                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                 <color key="backgroundColor" red="0.28627450980392155" green="0.50980392156862742" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="57A-JN-ghk"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
                                 <state key="normal" title="F">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,6 +51,7 @@
                             <constraint firstAttribute="trailing" secondItem="k3t-Ge-oym" secondAttribute="trailing" id="Mbc-l4-gSw"/>
                             <constraint firstItem="k3t-Ge-oym" firstAttribute="top" secondItem="M7o-Yq-wOq" secondAttribute="bottom" constant="5" id="NMv-Ie-YIe"/>
                             <constraint firstAttribute="trailing" secondItem="M7o-Yq-wOq" secondAttribute="trailing" id="mfs-MG-gaZ"/>
+                            <constraint firstItem="M7o-Yq-wOq" firstAttribute="height" secondItem="FPT-LI-yPK" secondAttribute="height" constant="-40" id="x9v-VK-SLl"/>
                             <constraint firstItem="k3t-Ge-oym" firstAttribute="leading" secondItem="FPT-LI-yPK" secondAttribute="leading" id="yri-bT-9dk"/>
                         </constraints>
                     </view>

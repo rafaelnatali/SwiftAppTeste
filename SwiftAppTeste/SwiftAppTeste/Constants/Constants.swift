@@ -26,5 +26,13 @@ struct Constants {
         static let kColor919191 = "#919191"
     }
     
+    struct StoryboardNames {
+        static let kMainSB = "Main"
+    }
     
+    struct ControllerIdentifiers {
+        static let kDashboardVC = "DashboardViewController"
+        static let kMySalesVC = "MySalesViewController"
+        static let kMyMessagesVC = "MyMessagesViewController"
+    }
 }

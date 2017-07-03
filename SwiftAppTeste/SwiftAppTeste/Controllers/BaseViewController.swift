@@ -10,19 +10,23 @@ import UIKit
 import UIColor_Hex_Swift
 
 class BaseViewController: UIViewController {
-    func segue(button: UIButton) {
-        self.navigationController?.performSegue(withIdentifier: "ShowMySales", sender: self.navigationController)
+    func replaceRootViewController(button: UIButton) {
+        guard let viewController = controllerFor(menuOption: MenuOptions(rawValue: button.tag))
+            else { return }
+        
+        self.navigationController?.viewControllers = [viewController]
     }
     
-    func createToolbarItem(imageName: String, size: CGSize) -> UIBarButtonItem {
+    func createToolbarItem(imageName: String, size: CGSize, menuOption: MenuOptions) -> UIBarButtonItem {
         let button: UIButton = UIButton(type: .custom)
         button.imageView?.contentMode = .scaleAspectFit
         button.setImage(UIImage(named: imageName), for: .normal)
         button.frame = CGRect(origin: CGPoint.zero, size: size)
+        button.tag = menuOption.rawValue
         
         let barButtonItem: UIBarButtonItem = UIBarButtonItem.init(customView: button)
         
-        button.addTarget(self, action: #selector(segue(button:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(replaceRootViewController(button:)), for: .touchUpInside)
         
         return barButtonItem;
     }
@@ -34,11 +38,14 @@ class BaseViewController: UIViewController {
         let itemSize: CGSize = CGSize(width: itemWidth, height: 40)
         toolbarItems = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
                         createToolbarItem(imageName: Constants.ImageNames.kIconMyMessages,
-                                          size: itemSize),
+                                          size: itemSize,
+                                          menuOption: .MenuOptionMyMessages),
                         createToolbarItem(imageName: Constants.ImageNames.kIconMySales,
-                                          size: itemSize),
+                                          size: itemSize,
+                                          menuOption:  .MenuOptionMySales),
                         createToolbarItem(imageName: Constants.ImageNames.kIconMyNotifications,
-                                          size: itemSize),
+                                          size: itemSize,
+                                          menuOption: .MenuOptionDashboard),
                         UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)]
         
         var positionsX = [CGFloat]()

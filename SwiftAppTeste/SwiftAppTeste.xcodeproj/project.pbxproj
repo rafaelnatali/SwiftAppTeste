@@ -31,6 +31,9 @@
 		5693A9461F06EDD3009F213B /* BaseNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5693A9451F06EDD3009F213B /* BaseNavigationBar.swift */; };
 		56EB39751F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39741F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift */; };
 		56EB39781F099541004B0B8E /* MySalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39771F099541004B0B8E /* MySalesViewController.swift */; };
+		56EB397B1F09BC1F004B0B8E /* MyMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB397A1F09BC1F004B0B8E /* MyMessagesViewController.swift */; };
+		56EB39801F09CE36004B0B8E /* MenuEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB397F1F09CE36004B0B8E /* MenuEnum.swift */; };
+		56EB39831F09CE52004B0B8E /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB39821F09CE52004B0B8E /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		5693A9451F06EDD3009F213B /* BaseNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationBar.swift; sourceTree = "<group>"; };
 		56EB39741F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleDescriptionListDatasourceAndDelegate.swift; sourceTree = "<group>"; };
 		56EB39771F099541004B0B8E /* MySalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySalesViewController.swift; sourceTree = "<group>"; };
+		56EB397A1F09BC1F004B0B8E /* MyMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessagesViewController.swift; sourceTree = "<group>"; };
+		56EB397F1F09CE36004B0B8E /* MenuEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuEnum.swift; sourceTree = "<group>"; };
+		56EB39821F09CE52004B0B8E /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		79C30C3DC18289447926D74F /* Pods-SwiftAppTeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAppTeste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAppTeste/Pods-SwiftAppTeste.debug.xcconfig"; sourceTree = "<group>"; };
 		A029356C24C1A34E1A65FBD5 /* Pods_SwiftAppTeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAppTeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0305C45A5148E7D8790EB5A /* Pods-SwiftAppTeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAppTeste.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftAppTeste/Pods-SwiftAppTeste.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		56034DFE1F06CE1000DAA4E0 /* SwiftAppTeste */ = {
 			isa = PBXGroup;
 			children = (
+				56EB397E1F09CE27004B0B8E /* Models */,
 				56EB39731F098DD5004B0B8E /* Datasources and Delegates */,
 				560A62B11F083B2400AE8B28 /* View Models */,
 				565ADA491F070BFF00307BAC /* Utils */,
@@ -152,6 +159,7 @@
 			children = (
 				568924EA1F073DA200C719CD /* XibView.swift */,
 				568924EC1F07483B00C719CD /* NSObject+Helper.swift */,
+				56EB39821F09CE52004B0B8E /* NavigationHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 		5672792B1F06DA6E00279B62 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				56EB39791F09BC06004B0B8E /* My Messages */,
 				56EB39761F0994F3004B0B8E /* My Sales */,
 				56C70BC61F06F25700FC7EC9 /* Dashboard */,
 				567279331F06DB6A00279B62 /* Menu */,
@@ -236,6 +245,22 @@
 				56EB39771F099541004B0B8E /* MySalesViewController.swift */,
 			);
 			path = "My Sales";
+			sourceTree = "<group>";
+		};
+		56EB39791F09BC06004B0B8E /* My Messages */ = {
+			isa = PBXGroup;
+			children = (
+				56EB397A1F09BC1F004B0B8E /* MyMessagesViewController.swift */,
+			);
+			path = "My Messages";
+			sourceTree = "<group>";
+		};
+		56EB397E1F09CE27004B0B8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56EB397F1F09CE36004B0B8E /* MenuEnum.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,10 +393,13 @@
 				56034E001F06CE1000DAA4E0 /* AppDelegate.swift in Sources */,
 				568924E71F073BEB00C719CD /* DashboardHeaderView.swift in Sources */,
 				568924DF1F07305B00C719CD /* DashboardViewController.swift in Sources */,
+				56EB39801F09CE36004B0B8E /* MenuEnum.swift in Sources */,
 				56EB39781F099541004B0B8E /* MySalesViewController.swift in Sources */,
+				56EB397B1F09BC1F004B0B8E /* MyMessagesViewController.swift in Sources */,
 				560A62B31F083B8200AE8B28 /* UserRoundedPictureCollectionViewCellModel.swift in Sources */,
 				5693A9461F06EDD3009F213B /* BaseNavigationBar.swift in Sources */,
 				561BFEA91F0888A800645CEF /* SaleDescriptionTableViewCell.swift in Sources */,
+				56EB39831F09CE52004B0B8E /* NavigationHelper.swift in Sources */,
 				56EB39751F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift in Sources */,
 				568924E11F07307900C719CD /* DashboardView.swift in Sources */,
 				5672792D1F06DA9B00279B62 /* BaseViewController.swift in Sources */,
