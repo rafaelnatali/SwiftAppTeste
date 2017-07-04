@@ -28,17 +28,27 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-LD-BIi" userLabel="Last Messages">
                     <rect key="frame" x="0.0" y="150" width="375" height="240"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="35" text="+10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ws9-we-cVf">
-                            <rect key="frame" x="307" y="25" width="50" height="35"/>
-                            <color key="backgroundColor" red="0.90588235289999997" green="0.67843137249999996" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <view clipsSubviews="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-xn-snT" customClass="LabelWithStyle" customModule="SwiftAppTeste" customModuleProvider="target">
+                            <rect key="frame" x="307" y="25" width="50" height="35.5"/>
+                            <color key="backgroundColor" red="0.90588235294117647" green="0.67843137254901964" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="35" id="HTp-Ye-CRb"/>
-                                <constraint firstAttribute="width" constant="50" id="V9a-ar-nax"/>
+                                <constraint firstAttribute="width" constant="50" id="b2u-WG-HIq"/>
+                                <constraint firstAttribute="height" constant="35.5" id="qid-YK-OdY"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="+10"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="colorText">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="paddingLabel">
+                                    <size key="value" width="19" height="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="13s-Mc-yLC">
                             <rect key="frame" x="18" y="85" width="339" height="155"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +64,7 @@
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dW-0r-nVN" userLabel="Border Right">
                             <rect key="frame" x="371" y="0.0" width="4" height="240"/>
-                            <color key="backgroundColor" red="0.90588235294117647" green="0.67843137254901964" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.67843137249999996" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="4" id="rN2-6c-dbl"/>
                             </constraints>
@@ -74,10 +84,10 @@
                         <constraint firstItem="13s-Mc-yLC" firstAttribute="leading" secondItem="cEa-LD-BIi" secondAttribute="leading" constant="18" id="BNX-8G-V0p"/>
                         <constraint firstAttribute="height" constant="240" id="OaM-Me-vW5"/>
                         <constraint firstAttribute="bottom" secondItem="9dW-0r-nVN" secondAttribute="bottom" id="SME-IE-105"/>
+                        <constraint firstItem="9dW-0r-nVN" firstAttribute="leading" secondItem="DIq-xn-snT" secondAttribute="trailing" constant="14" id="Tiy-1J-f8q"/>
                         <constraint firstItem="9dW-0r-nVN" firstAttribute="top" secondItem="cEa-LD-BIi" secondAttribute="top" id="eRM-ZB-ebO"/>
                         <constraint firstAttribute="trailing" secondItem="13s-Mc-yLC" secondAttribute="trailing" constant="18" id="fhd-do-BOH"/>
-                        <constraint firstItem="9dW-0r-nVN" firstAttribute="leading" secondItem="Ws9-we-cVf" secondAttribute="trailing" constant="14" id="iPl-Rq-fpX"/>
-                        <constraint firstItem="Ws9-we-cVf" firstAttribute="top" secondItem="cEa-LD-BIi" secondAttribute="top" constant="25" id="xJr-ok-al7"/>
+                        <constraint firstItem="DIq-xn-snT" firstAttribute="top" secondItem="cEa-LD-BIi" secondAttribute="top" constant="25" id="kB3-ay-QLo"/>
                     </constraints>
                 </view>
             </subviews>

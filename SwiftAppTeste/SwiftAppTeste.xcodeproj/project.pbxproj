@@ -20,6 +20,7 @@
 		5672792D1F06DA9B00279B62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672792C1F06DA9B00279B62 /* BaseViewController.swift */; };
 		567279311F06DB2D00279B62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5672792F1F06DB2D00279B62 /* LaunchScreen.storyboard */; };
 		567279321F06DB2D00279B62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567279301F06DB2D00279B62 /* Main.storyboard */; };
+		567A5F331F0B3DDC00C31055 /* LabelWithStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A5F321F0B3DDC00C31055 /* LabelWithStyle.swift */; };
 		568924DF1F07305B00C719CD /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568924DE1F07305B00C719CD /* DashboardViewController.swift */; };
 		568924E11F07307900C719CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568924E01F07307900C719CD /* DashboardView.swift */; };
 		568924E31F0734C900C719CD /* DashboardBalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568924E21F0734C900C719CD /* DashboardBalanceView.xib */; };
@@ -52,6 +53,7 @@
 		5672792C1F06DA9B00279B62 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5672792F1F06DB2D00279B62 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		567279301F06DB2D00279B62 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		567A5F321F0B3DDC00C31055 /* LabelWithStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithStyle.swift; sourceTree = "<group>"; };
 		568924DE1F07305B00C719CD /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		568924E01F07307900C719CD /* DashboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		568924E21F0734C900C719CD /* DashboardBalanceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardBalanceView.xib; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				561BFEA01F08880500645CEF /* UserRoundedPictureCollectionViewCell.xib */,
 				561BFEA71F0888A800645CEF /* SaleDescriptionTableViewCell.swift */,
 				561BFEA81F0888A800645CEF /* SaleDescriptionTableViewCell.xib */,
+				567A5F321F0B3DDC00C31055 /* LabelWithStyle.swift */,
 			);
 			path = "Common Reusable Cells";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				56EB39751F098E54004B0B8E /* SaleDescriptionListDatasourceAndDelegate.swift in Sources */,
 				568924E11F07307900C719CD /* DashboardView.swift in Sources */,
 				5672792D1F06DA9B00279B62 /* BaseViewController.swift in Sources */,
+				567A5F331F0B3DDC00C31055 /* LabelWithStyle.swift in Sources */,
 				5666B7091F06F60A00FACC88 /* Constants.swift in Sources */,
 				568924E51F0734E500C719CD /* DashboardBalanceView.swift in Sources */,
 				561BFEA11F08880500645CEF /* UserRoundedPictureCollectionViewCell.swift in Sources */,
