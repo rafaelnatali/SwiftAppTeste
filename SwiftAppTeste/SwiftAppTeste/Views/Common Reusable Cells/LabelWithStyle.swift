@@ -22,16 +22,6 @@ class LabelWithStyle: UIView {
     
     //MARK: - Life Cycle
     
-    init() {
-        super.init(frame: CGRect.zero)
-        
-        initialize()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -40,6 +40,7 @@ class MyMessagesViewController: BaseViewController, MessageGridDelegate {
         item.layer.masksToBounds = true
         item.layer.cornerRadius = 2
         
+        item.initialize()
         item.setNeedsLayout()
         item.layoutIfNeeded()
         let barButtonItem: UIBarButtonItem = UIBarButtonItem(customView: item)
