@@ -48,7 +48,7 @@ class UserRoundedPictureCollectionViewCellModel: NSObject {
             model.name = String(format: "%@ %@", arrayNames[index1], arrayNames[index2])
             
             if (NSObject.randomNumber(upperRange: 2) != 0) {
-                model.pictureName = Constants.ImageNames.kIconMyMessages
+                model.pictureName = Constants.ImageNames.kMyPicture
             }
             
             var color: String

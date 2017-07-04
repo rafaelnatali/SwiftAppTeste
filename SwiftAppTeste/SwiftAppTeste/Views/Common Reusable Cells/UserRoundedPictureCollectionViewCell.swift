@@ -29,7 +29,7 @@ class UserRoundedPictureCollectionViewCell: UICollectionViewCell {
         roundedButton?.setTitle(model.hasPicture ? String() : model.initialNameCapital, for: .normal)
         let image = model.hasPicture ? UIImage(named: model.pictureName!) : UIImage()
         
-        roundedButton?.imageView?.contentMode = .center
+        roundedButton?.imageView?.contentMode = .scaleToFill
         roundedButton?.setImage(image, for: .normal)
         roundedButton?.backgroundColor = UIColor(model.backgroundColorHexString)
         

@@ -15,6 +15,7 @@ struct Constants {
         static let kIconMyMessages = "barra_ico_mensagem"
         static let kIconMySales = "barra_ico_minhas_vendas"
         static let kIconMyNotifications = "barra_ico_notificacoes"
+        static let kMyPicture = "photo"
     }
     
     struct ColorsHex {
